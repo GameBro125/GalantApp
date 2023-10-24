@@ -2,4 +2,9 @@
     <string name="app_name">GalantApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="header_title">Главное меню</string>
+    <string name="header_text">\n</string>
+    <string name="title_1">Главная</string>
+    <string name="title_2">Пока не придумал</string>
+    <string name="title_3">Пока не придумал тоже</string>
 </resources>
