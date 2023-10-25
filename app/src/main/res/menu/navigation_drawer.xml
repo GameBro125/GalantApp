@@ -4,12 +4,12 @@
         android:id="@+id/group1"
         android:checkableBehavior="single">
         <item
-            android:id="@+id/item1"
-            android:title="@string/title_1"
+            android:id="@+id/firstFragmentItem"
+            android:title="@string/main_page"
             android:checked="true" />
         <item
-            android:id="@+id/item2"
-            android:title="@string/title_2" />
+            android:id="@+id/secondFragmentItem"
+            android:title="@string/description_page" />
         <item
             android:id="@+id/item3"
             android:title="@string/title_3" />

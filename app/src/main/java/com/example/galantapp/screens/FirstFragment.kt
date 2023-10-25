@@ -22,10 +22,7 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.button.setOnClickListener() {
-        MAIN.navController.navigate(R.id.action_firstFragment_to_secondFragment)
 
-        }
     }
 
 }

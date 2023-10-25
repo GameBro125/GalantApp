@@ -5,5 +5,14 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.GalantApp" parent="Base.Theme.GalantApp" />
+    <style name="Theme.App" parent="Theme.Material3.DayNight">
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+
+    <style name="Theme.GalantApp" parent="Base.Theme.GalantApp" >
+
+    </style>
+
+
 </resources>

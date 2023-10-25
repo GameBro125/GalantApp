@@ -4,7 +4,13 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="header_title">Главное меню</string>
     <string name="header_text">\n</string>
-    <string name="title_1">Главная</string>
-    <string name="title_2">Пока не придумал</string>
-    <string name="title_3">Пока не придумал тоже</string>
+    <string name="main_page">Главная</string>
+    <string name="description_page">Описание</string>
+    <string name="title_3">Пока не придумал</string>
+    <string name="top_app_bar">Что это вообще такое\n</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="main_page_description">
+        Mitsubishi Galant VIII Рестайлинг – седан D-класса, передний и полный привод. Автомат и механика. Бензиновые и дизельные двигатели мощностью от 90 до 280 лошадиных сил.
+    </string>
 </resources>
