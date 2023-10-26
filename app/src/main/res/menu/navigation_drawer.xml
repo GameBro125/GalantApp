@@ -11,7 +11,7 @@
             android:id="@+id/secondFragmentItem"
             android:title="@string/description_page" />
         <item
-            android:id="@+id/item3"
+            android:id="@+id/galleryFragmentItem"
             android:title="@string/title_3" />
     </group>
 </menu>

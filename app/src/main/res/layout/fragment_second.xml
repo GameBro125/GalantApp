@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#F8ACAC"
+    android:background="#85E8E8E8"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -13,7 +14,7 @@
         android:id="@+id/text_second"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Главная"
+        android:text="Описание"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="16dp"
@@ -22,17 +23,19 @@
         android:textStyle="bold"
         android:fontFamily="sans-serif-light"
         />
-
-    <Button
-        android:id="@+id/button_first"
+    <TextView
+        android:id="@+id/text_main_page_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        android:layout_marginBottom="200dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="0dp"
+        android:fontFamily="@font/philosopher"
+        android:text="@string/description_page_description"
+        android:textSize="16dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_second"/>
+        app:layout_constraintTop_toBottomOf="@id/text_main_page_header" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>
