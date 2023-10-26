@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,30 +20,42 @@ class GalleryFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
 
-        val images = listOf<ImageDataClass>(
-            ImageDataClass("car1", R.drawable.car1)
-        )
-        val recyclerView = view?.findViewById<RecyclerView>(R.id.imagesRecyclerView)
 
-        if (recyclerView != null) {
-            recyclerView.layoutManager = LinearLayoutManager(this)
-        }
 
-        recyclerView?.setHasFixedSize(true)
+        //val recyclerView = inflater.inflate(R.layout.fragment_gallery, container, false).findViewById<RecyclerView>(R.id.imagesRecyclerView)
 
-        if (recyclerView != null) {
-            recyclerView.adapter = ImageAdapter(this, images)
-        }
+
+
         return inflater.inflate(R.layout.fragment_gallery, container, false)
 
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+        val images = listOf<ImageDataClass>(
+            ImageDataClass("Галант 8", R.drawable.car1),
+            ImageDataClass("Галант 8", R.drawable.car2),
+            ImageDataClass("Галант 8", R.drawable.car3),
+            ImageDataClass("Галант 8", R.drawable.car4),
+            ImageDataClass("Галант 8", R.drawable.car5),
+            ImageDataClass("Галант 8", R.drawable.car6),
+            ImageDataClass("Галант 8", R.drawable.galant_main_menu),
+        )
+
+        val recyclerView = view.findViewById<RecyclerView>(R.id.imagesRecyclerView)
+
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView?.setHasFixedSize(true)
+        recyclerView.adapter = ImageAdapter(requireContext(), images )
+
+        super.onViewCreated(view, savedInstanceState)
     }
 
 }
