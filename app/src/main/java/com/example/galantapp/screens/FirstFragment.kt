@@ -1,12 +1,10 @@
 package com.example.galantapp.screens
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.galantapp.MAIN
-import com.example.galantapp.R
+import androidx.fragment.app.Fragment
 import com.example.galantapp.databinding.FragmentFirstBinding
 
 class FirstFragment : Fragment() {
@@ -15,7 +13,7 @@ class FirstFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentFirstBinding.inflate(layoutInflater, container, false)
         return binding.root
     }

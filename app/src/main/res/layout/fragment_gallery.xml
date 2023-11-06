@@ -11,11 +11,11 @@
         android:id="@+id/text_second"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:fontFamily="sans-serif-light"
-        android:text="Галерея"
-        android:textSize="36dp"
+        android:text="@string/gallery"
+        android:textSize="36sp"
         android:textStyle="bold" />
 
 

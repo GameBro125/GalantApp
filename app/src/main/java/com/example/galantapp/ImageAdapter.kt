@@ -1,33 +1,34 @@
 package com.example.galantapp
 
-import android.content.Context
-import android.media.Image
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.galantapp.galant.ImageDataClass
+import com.example.galantapp.databinding.ItemImagesBinding
+import com.example.galantapp.galant.Image
 
 
 class ImageAdapter(
-    private val context: Context,
-    private val images: List<ImageDataClass>
-    ): RecyclerView.Adapter<ImageAdapter.ImageViewHolder> (){
+    private val images: List<Image>
+) : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
 
-    class ImageViewHolder(view: View): RecyclerView.ViewHolder(view) {
-        val img = itemView.findViewById<ImageView>(R.id.image)
-        var imgTitle = itemView.findViewById<TextView>(R.id.image_title)
-
-        fun bindView (image: ImageDataClass){
-            img.setImageResource(image.imageSrc)
-            imgTitle.text = image.title
+    class ImageViewHolder(
+        private val binding: ItemImagesBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
+        fun bindView(image: Image) {
+            with(binding) {
+                ivCarImage.setImageResource(image.imageSrc)
+                tvImageTitle.text = image.title
+            }
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder =
-        ImageViewHolder(LayoutInflater.from(context).inflate(R.layout.item_images, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ImageViewHolder(
+        ItemImagesBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        )
+    )
 
     override fun getItemCount(): Int = images.size
 

@@ -1,5 +1,6 @@
 package com.example.galantapp
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -13,59 +14,86 @@ import com.example.galantapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
-    lateinit var navController: NavController
-    lateinit var toggle: ActionBarDrawerToggle
+    private var _binding: ActivityMainBinding? = null
+    private val binding get() = _binding!!
+
+    private val toggle: ActionBarDrawerToggle by lazy {
+        ActionBarDrawerToggle(
+            this@MainActivity,
+            binding.drawer,
+            R.string.open,
+            R.string.close
+        )
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        initWindowTransparency()
+        _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        initViews()
+        initListeners()
+    }
 
-        navController = Navigation.findNavController(this, R.id.nav_host_fragment)
-        MAIN = this
+    /**
+     * Инитит вьюхи
+     */
+    private fun initViews() {
+        initDrawer()
+    }
 
-
-        binding.apply {
-            toggle = ActionBarDrawerToggle(MAIN, drawer, R.string.open, R.string.close)
+    private fun initDrawer() {
+        with(binding) {
             drawer.addDrawerListener(toggle)
             toggle.syncState()
-
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
         }
+    }
 
-        binding.topAppBar.setNavigationOnClickListener {
-            binding.drawer.open()
-        }
+    /**
+     * Ставит слушатели действий
+     */
+    private fun initListeners() {
+        initDrawerNavigationListener()
+    }
 
+    private fun initDrawerNavigationListener() {
+        val navController = Navigation.findNavController(this, R.id.nav_host_fragment)
         binding.navigationView.setNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.firstFragmentItem -> {
                     navController.navigate(R.id.firstFragment)
-                    binding.drawer.close()
                 }
 
                 R.id.secondFragmentItem -> {
                     navController.navigate(R.id.secondFragment)
-                    binding.drawer.close()
                 }
                 R.id.galleryFragmentItem -> {
                     navController.navigate(R.id.galleryFragment)
-                    binding.drawer.close()
                 }
             }
+            binding.drawer.close()
             true
+        }
+    }
+
+    private fun initWindowTransparency() {
+        with(window) {
+            navigationBarColor = Color.TRANSPARENT
+            statusBarColor = Color.TRANSPARENT
         }
     }
 
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (toggle.onOptionsItemSelected(item)) {
-            true
+            return true
         }
         return super.onOptionsItemSelected(item)
     }
 
-
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
 }

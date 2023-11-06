@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GalantApp</string>
+    <string name="header_title">Главное меню</string>
+    <string name="main_page">Главная</string>
+    <string name="description_page">Описание</string>
+    <string name="title_3">Галерея</string>
+    <string name="top_app_bar">Что это вообще такое</string>
+    <string name="open">Открыть</string>
+    <string name="close">Закрыть</string>
+    <string name="main_page_description">"Mitsubishi Galant VIII Рестайлинг – седан D-класса, передний и полный привод. Автомат и механика. Бензиновые и дизельные двигатели мощностью от 90 до 280 лошадиных сил.     "</string>
+    <string name="description_page_description">Galant несет в себе имидж «сильного седана», а название модификации VR-4 первоначально использовалось для шестого поколения Galant, выпущенного в 1986 году. Цифра 4 в аббревиатуре VR-4 означает 4WD (полный привод); эта модификация возвратила Mitsubishi имидж раллийного автомобиля. Начиная с седьмого поколения кузов увеличился в размерах.</string>
+    <string name="gallery">Галерея</string>
+</resources>
